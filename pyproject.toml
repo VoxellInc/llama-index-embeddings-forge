@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "llama-index-embeddings-forge"
+version = "0.1.0"
+description = "LlamaIndex embeddings for Forge — Voxell's text-embedding API (turbo/pro/ultra; ultra = Qwen3-Embedding-8B, ~75+ avg MTEB, #4 English)."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+authors = [{ name = "Voxell, Inc." }]
+keywords = ["llamaindex", "llama-index", "embeddings", "forge", "voxell", "rag", "semantic-search", "qwen3"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Intended Audience :: Developers",
+]
+dependencies = [
+  "llama-index-core>=0.11.0",
+  "httpx>=0.27.0",
+]
+
+[project.urls]
+Homepage = "https://voxell.ai/forge"
+Repository = "https://github.com/VoxellInc/llama-index-embeddings-forge"
+Issues = "https://github.com/VoxellInc/llama-index-embeddings-forge/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["llama_index"]
