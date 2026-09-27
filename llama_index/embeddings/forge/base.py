@@ -38,7 +38,7 @@ class ForgeEmbedding(BaseEmbedding):
 
     Args:
         model: Forge tier — ``"turbo"`` (1024d), ``"pro"`` (2560d), or
-            ``"ultra"`` (4096d; Qwen3-Embedding-8B). Stored as ``model_name``.
+            ``"ultra"`` (4096d, highest quality). Stored as ``model_name``.
         api_key: Forge API key. Defaults to the ``FORGE_API_KEY`` env var.
         base_url: API base URL. Defaults to ``https://api.voxell.ai``.
         dimensions: Optional Matryoshka truncation (re-normalized), e.g. ``256``.

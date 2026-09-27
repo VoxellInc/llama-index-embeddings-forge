@@ -1,6 +1,11 @@
 # llama-index-embeddings-forge
 
-LlamaIndex embeddings for [**Forge**](https://voxell.ai/forge) — Voxell's hosted text-embedding API.
+LlamaIndex embeddings for [**Forge**](https://voxell.ai/forge), Voxell's hosted text-embedding API.
+
+Voxell's Ingot-8B-R3 ranks #1 for English on the public MTEB leaderboard (English v2), with a 75.98
+mean task score across 41 tasks. It is the top usable English embedding model. See the
+[model card](https://huggingface.co/JCorners/Ingot-8B-R3), or try Forge with no signup on the
+[playground](https://playground.voxell.ai).
 
 ## Why Forge
 
@@ -9,8 +14,8 @@ One API, three tiers — pick your point on the quality/cost curve:
 | Model | Dim | Notes |
 | ----- | --- | ----- |
 | `turbo` | 1024 | fast, low cost |
-| `pro` | 2560 | |
-| `ultra` | 4096 | Qwen3-Embedding-8B; ~75+ avg task score on MTEB, currently #4 on MTEB (English) — the top *usable* model (the three above are research-only) |
+| `pro` | 2560 | balanced quality and cost |
+| `ultra` | 4096 | highest quality, top tier |
 
 Matryoshka (MRL) dimensions are real: truncated vectors are re-normalized, so a shorter `dim` is a
 unit-norm prefix of the full vector — smaller index, minimal quality loss. Forge logs request
