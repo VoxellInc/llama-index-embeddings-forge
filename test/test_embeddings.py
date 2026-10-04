@@ -38,6 +38,17 @@ class ShapeTests(unittest.TestCase):
         e = ForgeEmbedding(model="turbo", api_key="test-key")
         self.assertNotIn("dim", e._body(["x"], "query"))
 
+    def test_version_matches_package_metadata(self):
+        # The User-Agent and __version__ must report the installed package version.
+        from importlib.metadata import version
+
+        from llama_index.embeddings import forge
+
+        installed = version("llama-index-embeddings-forge")
+        self.assertEqual(forge.__version__, installed)
+        e = ForgeEmbedding(model="turbo", api_key="test-key")
+        self.assertEqual(e._headers["User-Agent"], f"llama-index-embeddings-forge/{installed}")
+
 
 @unittest.skipUnless(LIVE, "FORGE_API_KEY not set — skipping live tests")
 class LiveTests(unittest.TestCase):
