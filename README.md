@@ -30,7 +30,7 @@ any other system, and they are not a promise about your corpus.
 They measure the whole hosted pipeline, of which embedding is one step. This package gives
 LlamaIndex the embeddings. It does not run the rest of that pipeline for you.
 
-The receipts, with sample questions including ones it got wrong, are at
+The receipts, with sample questions including ones the hosted retrieval got wrong, are at
 [voxell.ai/retrieval](https://voxell.ai/retrieval/).
 
 ## Why Forge
