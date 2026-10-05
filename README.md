@@ -10,15 +10,15 @@ mean task score across 41 tasks. It is the top usable English embedding model. S
 ## Retrieval, measured on public documents
 
 Voxell publishes a retrieval receipt for each of four public corpora: 7,817 documents and 980,885
-passages in total. Each corpus has 200 questions (800 in all), measured 2026-10-02.
+passages in total. Each corpus has 200 questions (800 in all), measured 2026-10-05.
 
 | Corpus | Documents | First result answers the question | An answer in the top three |
 | ------ | --------: | --------------------------------: | -------------------------: |
 | SEC filings | 2,010 | 91% | 95% |
-| USPTO patents | 4,008 | 86.5% | 92% |
-| NASA technical reports | 1,210 | 72% | 80% |
-| arXiv technical papers | 589 | 92% | 98% |
-| All four | 7,817 | 85% | 91% |
+| USPTO patents | 4,008 | 86.5% | 91.5% |
+| NASA technical reports | 1,210 | 67% | 78% |
+| arXiv technical papers | 589 | 86.5% | 96% |
+| All four | 7,817 | 83% | 90% |
 
 The right document is in the top ten for 95% of the questions.
 
