@@ -14,7 +14,7 @@ from llama_index.core.base.embeddings.base import BaseEmbedding
 from llama_index.core.bridge.pydantic import Field
 
 DEFAULT_BASE_URL = "https://api.voxell.ai"
-__version__ = "0.1.0"
+__version__ = "0.1.2"
 _USER_AGENT = f"llama-index-embeddings-forge/{__version__}"
 
 

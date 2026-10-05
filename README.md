@@ -7,19 +7,45 @@ mean task score across 41 tasks. It is the top usable English embedding model. S
 [model card](https://huggingface.co/JCorners/Ingot-8B-R3), or try Forge with no signup on the
 [playground](https://playground.voxell.ai).
 
+## Retrieval, measured on public documents
+
+Voxell publishes a retrieval receipt for each of four public corpora: 7,817 documents and 980,885
+passages in total. Each corpus has 200 questions (800 in all), measured 2026-10-05.
+
+| Corpus | Documents | First result answers the question | An answer in the top three |
+| ------ | --------: | --------------------------------: | -------------------------: |
+| SEC filings | 2,010 | 91% | 95% |
+| USPTO patents | 4,008 | 86.5% | 91.5% |
+| NASA technical reports | 1,210 | 67% | 78% |
+| arXiv technical papers | 589 | 86.5% | 96% |
+| All four | 7,817 | 83% | 90% |
+
+The right document is in the top ten for 95% of the questions.
+
+What these numbers are: the questions were written by a model from the documents, and each result
+was judged against the passage text. That is easier than a test set written by people. The numbers
+describe what Voxell's hosted retrieval does on these four corpora. They are not a comparison with
+any other system, and they are not a promise about your corpus.
+
+They measure the whole hosted pipeline, of which embedding is one step. This package gives
+LlamaIndex the embeddings. It does not run the rest of that pipeline for you.
+
+The receipts, with sample questions including ones the hosted retrieval got wrong, are at
+[voxell.ai/retrieval](https://voxell.ai/retrieval/).
+
 ## Why Forge
 
-One API, three tiers — pick your point on the quality/cost curve:
+One API, three tiers. Pick your point on the quality and cost curve:
 
-| Model | Dim | Notes |
+| Tier | Dim | Notes |
 | ----- | --- | ----- |
 | `turbo` | 1024 | fast, low cost |
 | `pro` | 2560 | balanced quality and cost |
 | `ultra` | 4096 | highest quality, top tier |
 
 Matryoshka (MRL) dimensions are real: truncated vectors are re-normalized, so a shorter `dim` is a
-unit-norm prefix of the full vector — smaller index, minimal quality loss. Forge logs request
-metadata only (model, tokens, latency) — never your text or vectors.
+unit-norm prefix of the full vector, which means a smaller index with minimal quality loss. Forge
+logs request metadata only (model, tokens, latency), never your text or vectors.
 
 ## Install
 

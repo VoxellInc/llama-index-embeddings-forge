@@ -4,13 +4,13 @@ build-backend = "hatchling.build"
 
 [project]
 name = "llama-index-embeddings-forge"
-version = "0.1.1"
-description = "LlamaIndex embeddings for Forge, Voxell's hosted text-embedding API (turbo, pro, ultra tiers). Voxell's Ingot-8B-R3 ranks #1 for English on the public MTEB leaderboard."
+version = "0.1.2"
+description = "LlamaIndex embeddings for Forge, Voxell's hosted text-embedding API (turbo, pro, ultra tiers). Voxell's Ingot-8B-R3 ranks #1 for English on the public MTEB leaderboard. Voxell's full hosted retrieval pipeline, of which embedding is one step, measured on 980,885 passages from four public corpora: the first result answers 83% of 800 model-written questions, an easier test than questions written by people."
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.9"
 authors = [{ name = "Voxell, Inc." }]
-keywords = ["llamaindex", "llama-index", "embeddings", "forge", "voxell", "rag", "semantic-search", "mteb"]
+keywords = ["llamaindex", "llama-index", "embeddings", "forge", "voxell", "rag", "retrieval", "semantic-search", "mteb"]
 classifiers = [
   "Programming Language :: Python :: 3",
   "License :: OSI Approved :: MIT License",
